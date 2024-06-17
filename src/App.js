@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { QIButton, QISwitch, QIInput } from '@qinvent/react-kit';
+import '@qinvent/react-kit/dist/styles/bootstrap.css';
+import "./App.css";
 
-function App() {
+const MyComponent = () => {
+
+  const handleButtonClick = () => {
+    // Handle button click
+    alert("Logi Successfull")
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <form action="">
+        <div className='form-group' >
+          <label htmlFor="">Name</label>
+          <QIInput />
+        </div>
+        <div className='form-group' >
+          <label htmlFor="">Password</label>
+          <QIInput />
+        </div>
+        <div className='form-group' >  
+          <QISwitch />
+          <span> Remember Password</span>
+        </div>
+        <QIButton
+          type="button"
+          size="md"
+          className="qi-btn primary"
+          variant="link"
+          onClick={handleButtonClick}
+          disabled={false}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+          Login
+        </QIButton>
+      </form>
+    </>
 
-export default App;
+  );
+};
+
+export default MyComponent;
