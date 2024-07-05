@@ -1,13 +1,14 @@
 import React from 'react';
 import { QIButton, QISwitch, QIInput } from '@qinvent/react-kit';
-import '@qinvent/react-kit/dist/styles/bootstrap.css';
+import '@qinvent/react-kit/dist/styles/tailwind.css';
+import sprite from "@qinvent/react-kit/dist/assets/icons.svg"
 import "./App.css";
 
 const MyComponent = () => {
 
   const handleButtonClick = () => {
     // Handle button click
-    alert("Logi Successfull")
+    alert("Login Successfull")
   };
 
   return (
@@ -31,6 +32,7 @@ const MyComponent = () => {
           className="qi-btn primary"
           variant="link"
           onClick={handleButtonClick}
+          icon={{ src: `${sprite}#cross`, height: '20px', width: '20px', align: 'right' }}
           disabled={false}
         >
           Login
